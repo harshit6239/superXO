@@ -160,5 +160,21 @@ const handleBoardClick = (gameState, i, j) => {
     evalMove.newGameState = newGameState;
     return evalMove;
 };
-const boardFunctions = { checkMiniBoardWin, checkBoardWin, handleBoardClick };
+
+const getTimeString = (time) => {
+    const seconds = Math.floor((time / 1000) % 60)
+        .toString()
+        .padStart(2, "0");
+    const minutes = Math.floor((time / 1000 / 60) % 60)
+        .toString()
+        .padStart(2, "0");
+    return `${minutes}:${seconds}`;
+};
+
+const boardFunctions = {
+    checkMiniBoardWin,
+    checkBoardWin,
+    handleBoardClick,
+    getTimeString,
+};
 export default boardFunctions;

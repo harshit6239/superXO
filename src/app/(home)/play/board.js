@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function Board({ gameState, handleBoardClick }) {
+export default function Board({ gameState, handleBoardClick, inGame }) {
     const board = gameState.miniBoards;
 
     return (
@@ -36,7 +36,7 @@ export default function Board({ gameState, handleBoardClick }) {
                                         "hover:scale-110 transition-transform ease-in-out")
                                 }
                                 onClick={() =>
-                                    handleBoardClick(gameState, i, j)
+                                    inGame && handleBoardClick(gameState, i, j)
                                 }
                             >
                                 {cell !== "" && (

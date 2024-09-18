@@ -6,6 +6,7 @@ import Link from "next/link";
 import signUpHandler from "@/actions/signUpHandler";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 export default function SignUp() {
     const router = useRouter();
@@ -45,9 +46,16 @@ export default function SignUp() {
                                 );
                             });
                     }}
-                    className=" p-10 pb-4 flex flex-col gap-4 "
+                    className=" p-10 pb-4 pt-4 flex flex-col items-center w-full gap-4 "
                 >
-                    <div className="relative ">
+                    <Image
+                        src={"/logo.svg"}
+                        height={100}
+                        width={100}
+                        alt="logo"
+                        className="mb-6"
+                    />
+                    <div className="relative w-full">
                         <FaUser className="text-white absolute top-1/2 translate-y-[-50%] left-3" />
                         <input
                             name="email"
@@ -56,7 +64,7 @@ export default function SignUp() {
                             className="bg-gray-700 text-white rounded-md p-4 pl-9 w-full"
                         />
                     </div>
-                    <div className="relative ">
+                    <div className="relative w-full">
                         <FaLock className="text-white absolute top-1/2 translate-y-[-50%] left-3" />
                         <input
                             name="password"
@@ -72,7 +80,7 @@ export default function SignUp() {
                             {showPass ? <FaEyeSlash /> : <FaEye />}
                         </div>
                     </div>
-                    <div className="relative ">
+                    <div className="relative w-full">
                         <FaLock className="text-white absolute top-1/2 translate-y-[-50%] left-3" />
                         <input
                             name="confirmPassword"
@@ -93,7 +101,7 @@ export default function SignUp() {
                         </div>
                     </div>
                     <button
-                        className="bg-blue-500 text-white p-4 rounded-md transition-all ease-in-out
+                        className="bg-blue-500 text-white w-full p-4 rounded-md transition-all ease-in-out
                                         hover:bg-blue-600 hover:rounded-3xl"
                     >
                         Sign Up

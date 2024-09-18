@@ -29,11 +29,11 @@ export default function HomeLayout({ children }) {
                     </li>
                     <li>
                         <Link
-                            href="/friends"
+                            href="/social"
                             className="menu-item"
                         >
                             <FaUserFriends />
-                            Friends
+                            Social
                         </Link>
                     </li>
                     <li>
